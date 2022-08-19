@@ -1,3 +1,4 @@
+#import packages
 library(fpp2)
 library(GGally)
 
