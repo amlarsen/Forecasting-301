@@ -4,7 +4,7 @@ library(urca)
 library(seasonal)
 library(readr)
 
-#bring in our data here
+#import in our data here
 uheps <- read_csv("R/United Health EPS.csv", col_types = cols(EPS = col_number()))
 
 View(uheps)
