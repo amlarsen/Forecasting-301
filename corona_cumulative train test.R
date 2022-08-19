@@ -1,3 +1,4 @@
+#import packages
 library(fpp2)
 
 # Read in data
@@ -44,7 +45,7 @@ model_d <- rwf(dtst, drift=TRUE, h=fper)
 model_s <- snaive(dtst,h=fper)
 autoplot(window(ctsc,start=1)) +
   autolayer(model_m, PI=FALSE, series="Mean") +
-  autolayer(model_n, PI=FALSE, series="Naïve") +
+  autolayer(model_n, PI=FALSE, series="NaÃ¯ve") +
   autolayer(model_d, PI=FALSE, series="Drift") +
   autolayer(model_s, PI=FALSE, series='Seasonal Naive')+
   xlab("Days") + ylab("Corona virus cases") +
@@ -77,13 +78,13 @@ ma(ctsc,5)
 
 autoplot(window(ctsc,start=1,series="Data")) +
   autolayer(ma(ctsc,7), series="5-MA") +
-  autolayer(model_stl, PI=FALSE, series="Naïve") +
+  autolayer(model_stl, PI=FALSE, series="NaÃ¯ve") +
   #autolayer(model_d, PI=FALSE, series="Drift") +
   #autolayer(model_s, PI=FALSE, series='Seasonal Naive')+
   xlab("Days") + ylab("Corona virus cases") +
   ggtitle("Corona virus forecast") +
-  scale_colour_manual(values=c("Data"="grey50","5-MA"="red","Naïve"='blue'),
-                      breaks=c("Data","5-MA",'Naïve'))
+  scale_colour_manual(values=c("Data"="grey50","5-MA"="red","NaÃ¯ve"='blue'),
+                      breaks=c("Data","5-MA",'NaÃ¯ve'))
 
 model_stl <- mstl(train,h=8)
 autoplot(model_stl)
