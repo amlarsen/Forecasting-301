@@ -5,7 +5,7 @@ library(urca)
 library(seasonal)
 library(readr)
 
-# get your dataset in and transformed
+# get your dataset in and transformed to timeseries
 
 uheps <- read_csv("R/United Health EPS.csv", col_types = cols(EPS = col_number()))
 
@@ -37,7 +37,7 @@ model_d <- rwf(train, drift=TRUE, h=16)
 model_s <- snaive(train,h=16)
 autoplot(window(uhts,start=1)) +
   autolayer(model_m, PI=FALSE, series="Mean") +
-  autolayer(model_n, PI=FALSE, series="Naïve") +
+  autolayer(model_n, PI=FALSE, series="NaÃ¯ve") +
   autolayer(model_d, PI=FALSE, series="Drift") +
   autolayer(model_s, PI=FALSE, series='Seasonal Naive')+
   xlab("Days") + ylab("UHG EPS") +
