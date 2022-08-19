@@ -1,5 +1,7 @@
+#import packages
 library(fpp2)
 
+#import data and select range of data
 livestock2 <- window(livestock, start=1970, end=2000)
 
 autoplot(livestock)
